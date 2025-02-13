@@ -35,8 +35,10 @@ public class AccountService {
         return accountRepository.findByCustomerId(account.getCustomerId())
                 .count()
                 .flatMap(count -> {
-                    if (account.getType().equalsIgnoreCase("AHORRO") && count > 0) {
-                        return Mono.error(new RuntimeException("Un cliente personal solo puede tener una cuenta de ahorro."));
+                    if (account.getType().equalsIgnoreCase("AHORRO") && count > 0
+                    || account.getType().equalsIgnoreCase("PLAZO_FIJO") && count > 0
+                    || account.getType().equalsIgnoreCase("CORRIENTE") && count > 0) {
+                        return Mono.error(new RuntimeException("Un cliente personal solo puede tener una cuenta de ahorro,una cuenta corriente o cuentas a plazo fijo."));
                     }
                     return accountRepository.save(account);
                 });

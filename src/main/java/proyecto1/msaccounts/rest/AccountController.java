@@ -42,11 +42,26 @@ public class AccountController {
     @Operation(summary = "Obtener una cuenta por número", description = "Busca una cuenta bancaria por su número único")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Cuenta encontrada"),
-            @ApiResponse(responseCode = "404", description = "Cuenta no encontrada")
+            @ApiResponse(responseCode = "404", description = "Cuenta no encontrada"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
     })
-    @GetMapping("/{number}")
+    @GetMapping("byNumber/{number}")
     public Mono<ResponseEntity<Account>> getAccountByNumber(@PathVariable String number) {
         return repository.findByNumber(number)
+                .map(ResponseEntity::ok)
+                .defaultIfEmpty(ResponseEntity.notFound().build());
+    }
+
+
+    @Operation(summary = "Obtener una cuenta por id", description = "Busca una cuenta bancaria por id")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Cuenta encontrada"),
+            @ApiResponse(responseCode = "404", description = "Cuenta no encontrada"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
+    @GetMapping("/{id}")
+    public Mono<ResponseEntity<Account>> getAccountById(@PathVariable String id) {
+        return repository.findById(id)
                 .map(ResponseEntity::ok)
                 .defaultIfEmpty(ResponseEntity.notFound().build());
     }
@@ -54,7 +69,9 @@ public class AccountController {
     @Operation(summary = "Crear una cuenta bancaria", description = "Registra una nueva cuenta en el sistema")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Cuenta creada exitosamente"),
-            @ApiResponse(responseCode = "400", description = "Error en la validación de la cuenta")
+            @ApiResponse(responseCode = "400", description = "Error en la validación de la cuenta"),
+            @ApiResponse(responseCode = "404", description = "Cliente no encontrado"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
     })
     @PostMapping
     public Mono<ResponseEntity<Account>> createAccount(@Valid @RequestBody Account account) {
@@ -71,7 +88,8 @@ public class AccountController {
     @Operation(summary = "Actualizar saldo de una cuenta", description = "Modifica el saldo de una cuenta bancaria")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Saldo actualizado correctamente"),
-            @ApiResponse(responseCode = "404", description = "Cuenta no encontrada")
+            @ApiResponse(responseCode = "404", description = "Cuenta no encontrada"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
     })
     @PutMapping("/{id}")
     public Mono<ResponseEntity<Account>> updateBalance(@PathVariable String id, @RequestBody Double newBalance) {
@@ -87,7 +105,8 @@ public class AccountController {
     @Operation(summary = "Eliminar una cuenta bancaria", description = "Elimina una cuenta bancaria del sistema")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Cuenta eliminada exitosamente"),
-            @ApiResponse(responseCode = "404", description = "Cuenta no encontrada")
+            @ApiResponse(responseCode = "404", description = "Cuenta no encontrada"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
     })
     @DeleteMapping("/{id}")
     public Mono<ResponseEntity<Void>> deleteAccount(@PathVariable String id) {
