@@ -9,7 +9,6 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 @SpringBootApplication
 @EnableReactiveMongoRepositories(basePackages = "proyecto1.msaccounts.repository")
-@EnableFeignClients(basePackages = "proyecto1.msaccounts.client")
 public class MsAccountsApplication {
 
 	public static void main(String[] args) {
