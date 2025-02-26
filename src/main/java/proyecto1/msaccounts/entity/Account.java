@@ -26,9 +26,10 @@ public class Account {
     private LocalDateTime lastTransactionDate;
     private Integer freeTransactions; // Número de transacciones sin comisión
     private Integer transactionCount; // Contador de transacciones
-
+    private LocalDateTime createdAt; // Fecha de creación de la cuenta
     public Account() {
         this.lastTransactionDate = LocalDateTime.now();
+        this.createdAt = LocalDateTime.now();
     }
 
 }

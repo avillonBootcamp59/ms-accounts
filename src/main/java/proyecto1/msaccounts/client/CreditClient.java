@@ -27,5 +27,13 @@ public class CreditClient {
                         Mono.error(new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Error en el servicio ms-credits")))
                 .bodyToFlux(CreditDTO.class);
     }
+    public Mono<Boolean> hasOverdueDebt(String customerId) {
+        return webClient.get()
+                .uri("/v1.0/credits/hasOverdueDebt/{customerId}", customerId)
+                .retrieve()
+                .bodyToMono(Boolean.class)
+                .onErrorReturn(false);
+    }
+
 }
 
