@@ -36,13 +36,13 @@ Original Stack Trace:
 		at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:91)
 		at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:100)
 		at com.sun.proxy.$Proxy125.getCustomer(Unknown Source)
-		at proyecto1.msaccounts.client.CustomerClient.getCustomerById(CustomerClient.java:17)
+		at client.com.bank.pe.msaccounts.CustomerClient.getCustomerById(CustomerClient.java:17)
 		at java.base/java.lang.invoke.MethodHandle.invokeWithArguments(MethodHandle.java:710)
 		at feign.DefaultMethodHandler.invoke(DefaultMethodHandler.java:141)
 		at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:100)
 		at com.sun.proxy.$Proxy125.getCustomerById(Unknown Source)
-		at proyecto1.msaccounts.service.impl.AccountServiceImpl.validateAndCreateAccount(AccountService.java:33)
-		at proyecto1.msaccounts.rest.AccountController.createAccount(AccountController.java:80)
+		at impl.service.com.bank.pe.msaccounts.AccountServiceImpl.validateAndCreateAccount(AccountService.java:33)
+		at rest.com.bank.pe.msaccounts.AccountController.createAccount(AccountController.java:80)
 		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -112,13 +112,13 @@ Caused by: org.springframework.http.converter.HttpMessageConversionException: Ty
 	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:91)
 	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:100)
 	at com.sun.proxy.$Proxy125.getCustomer(Unknown Source)
-	at proyecto1.msaccounts.client.CustomerClient.getCustomerById(CustomerClient.java:17)
+	at client.com.bank.pe.msaccounts.CustomerClient.getCustomerById(CustomerClient.java:17)
 	at java.base/java.lang.invoke.MethodHandle.invokeWithArguments(MethodHandle.java:710)
 	at feign.DefaultMethodHandler.invoke(DefaultMethodHandler.java:141)
 	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:100)
 	at com.sun.proxy.$Proxy125.getCustomerById(Unknown Source)
-	at proyecto1.msaccounts.service.impl.AccountServiceImpl.validateAndCreateAccount(AccountService.java:33)
-	at proyecto1.msaccounts.rest.AccountController.createAccount(AccountController.java:80)
+	at impl.service.com.bank.pe.msaccounts.AccountServiceImpl.validateAndCreateAccount(AccountService.java:33)
+	at rest.com.bank.pe.msaccounts.AccountController.createAccount(AccountController.java:80)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -198,12 +198,12 @@ Caused by: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot
 2025-02-18 06:28:00 [cluster-ClusterId{value='67b46ebf751f0821e75faec5', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:92}] to localhost:27017
 2025-02-18 06:28:00 [cluster-rtt-ClusterId{value='67b46ebf751f0821e75faec5', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:93}] to localhost:27017
 2025-02-18 06:28:00 [cluster-ClusterId{value='67b46ebf751f0821e75faec5', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=57420400}
-2025-02-18 06:28:00 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountController' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\rest\AccountController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'proyecto1.msaccounts.client.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
+2025-02-18 06:28:00 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountController' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\rest\AccountController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'client.com.bank.pe.msaccounts.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
 2025-02-18 06:28:02 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2025-02-18 06:28:02 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountController' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\rest\AccountController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'proyecto1.msaccounts.client.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountController' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\rest\AccountController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'client.com.bank.pe.msaccounts.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:801)
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:224)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
@@ -223,8 +223,8 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1289)
-	at proyecto1.msaccounts.MsAccountsApplication.main(MsAccountsApplication.java:16)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'proyecto1.msaccounts.client.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
+	at com.bank.pe.msaccounts.MsAccountsApplication.main(MsAccountsApplication.java:16)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'client.com.bank.pe.msaccounts.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:801)
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:224)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
@@ -241,7 +241,7 @@ Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Err
 	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:788)
 	... 19 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'proyecto1.msaccounts.client.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'client.com.bank.pe.msaccounts.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:555)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
@@ -284,12 +284,12 @@ Caused by: java.lang.IllegalStateException: PathVariable annotation was empty on
 2025-02-18 06:28:58 [cluster-rtt-ClusterId{value='67b46efad2f12a055319cc8a', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:94}] to localhost:27017
 2025-02-18 06:28:58 [cluster-ClusterId{value='67b46efad2f12a055319cc8a', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:95}] to localhost:27017
 2025-02-18 06:28:58 [cluster-ClusterId{value='67b46efad2f12a055319cc8a', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=54346600}
-2025-02-18 06:28:58 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountController' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\rest\AccountController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'proyecto1.msaccounts.client.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
+2025-02-18 06:28:58 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountController' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\rest\AccountController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'client.com.bank.pe.msaccounts.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
 2025-02-18 06:29:00 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2025-02-18 06:29:00 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountController' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\rest\AccountController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'proyecto1.msaccounts.client.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountController' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\rest\AccountController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'client.com.bank.pe.msaccounts.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:801)
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:224)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
@@ -309,8 +309,8 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1289)
-	at proyecto1.msaccounts.MsAccountsApplication.main(MsAccountsApplication.java:16)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'proyecto1.msaccounts.client.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
+	at com.bank.pe.msaccounts.MsAccountsApplication.main(MsAccountsApplication.java:16)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'client.com.bank.pe.msaccounts.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:801)
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:224)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
@@ -327,7 +327,7 @@ Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Err
 	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:788)
 	... 19 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'proyecto1.msaccounts.client.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'client.com.bank.pe.msaccounts.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:555)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
@@ -370,12 +370,12 @@ Caused by: java.lang.IllegalStateException: PathVariable annotation was empty on
 2025-02-18 06:29:34 [cluster-rtt-ClusterId{value='67b46f1d2d32d9169456ca60', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:96}] to localhost:27017
 2025-02-18 06:29:34 [cluster-ClusterId{value='67b46f1d2d32d9169456ca60', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:97}] to localhost:27017
 2025-02-18 06:29:34 [cluster-ClusterId{value='67b46f1d2d32d9169456ca60', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=88546400}
-2025-02-18 06:29:34 [main] WARN  o.s.b.w.r.c.GenericReactiveWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountController' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\rest\AccountController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'proyecto1.msaccounts.client.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
+2025-02-18 06:29:34 [main] WARN  o.s.b.w.r.c.GenericReactiveWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountController' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\rest\AccountController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'client.com.bank.pe.msaccounts.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
 2025-02-18 06:29:36 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2025-02-18 06:29:36 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountController' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\rest\AccountController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'proyecto1.msaccounts.client.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountController' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\rest\AccountController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'client.com.bank.pe.msaccounts.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:801)
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:224)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
@@ -468,7 +468,7 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'proyecto1.msaccounts.client.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'client.com.bank.pe.msaccounts.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:801)
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:224)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
@@ -485,7 +485,7 @@ Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Err
 	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:788)
 	... 91 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'proyecto1.msaccounts.client.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'client.com.bank.pe.msaccounts.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:555)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
@@ -516,7 +516,7 @@ Caused by: java.lang.IllegalStateException: PathVariable annotation was empty on
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
 	... 114 common frames omitted
-2025-02-18 06:29:36 [main] ERROR o.s.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6f3e19b3] to prepare test instance [proyecto1.msaccounts.MsCustomerApplicationTests@6944e53e]
+2025-02-18 06:29:36 [main] ERROR o.s.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6f3e19b3] to prepare test instance [com.bank.pe.msaccounts.MsCustomerApplicationTests@6944e53e]
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:98)
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
@@ -592,7 +592,7 @@ java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountController' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\rest\AccountController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'proyecto1.msaccounts.client.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountController' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\rest\AccountController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'client.com.bank.pe.msaccounts.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:801)
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:224)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
@@ -613,7 +613,7 @@ Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Err
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:141)
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:90)
 	... 73 common frames omitted
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'proyecto1.msaccounts.client.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'client.com.bank.pe.msaccounts.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:801)
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:224)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
@@ -630,7 +630,7 @@ Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Err
 	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:788)
 	... 91 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'proyecto1.msaccounts.client.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'client.com.bank.pe.msaccounts.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:555)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
@@ -670,12 +670,12 @@ Caused by: java.lang.IllegalStateException: PathVariable annotation was empty on
 2025-02-18 06:31:04 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 108 ms. Found 1 Reactive MongoDB repository interfaces.
 2025-02-18 06:31:04 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=33cc9d3d-9318-306f-b4f6-03f4787f3520
 2025-02-18 06:31:05 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/11.0.25+9-LTS-256"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=NettyStreamFactoryFactory{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@100d0218, socketChannelClass=class io.netty.channel.socket.nio.NioSocketChannel, allocator=PooledByteBufAllocator(directByDefault: true), sslContext=null}, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@2774dcf4], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@20b829d5]}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@7c5f29c6], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
-2025-02-18 06:31:06 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountController' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\rest\AccountController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'proyecto1.msaccounts.client.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
+2025-02-18 06:31:06 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountController' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\rest\AccountController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'client.com.bank.pe.msaccounts.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
 2025-02-18 06:31:08 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2025-02-18 06:31:08 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountController' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\rest\AccountController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'proyecto1.msaccounts.client.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountController' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\rest\AccountController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'client.com.bank.pe.msaccounts.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:801)
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:224)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
@@ -695,8 +695,8 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1289)
-	at proyecto1.msaccounts.MsAccountsApplication.main(MsAccountsApplication.java:16)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'proyecto1.msaccounts.client.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
+	at com.bank.pe.msaccounts.MsAccountsApplication.main(MsAccountsApplication.java:16)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'client.com.bank.pe.msaccounts.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:801)
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:224)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
@@ -713,7 +713,7 @@ Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Err
 	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:788)
 	... 19 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'proyecto1.msaccounts.client.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'client.com.bank.pe.msaccounts.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:555)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
@@ -756,12 +756,12 @@ Caused by: java.lang.IllegalStateException: PathVariable annotation was empty on
 2025-02-18 06:32:10 [cluster-rtt-ClusterId{value='67b46fb949f3734fc865ce20', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:109}] to localhost:27017
 2025-02-18 06:32:10 [cluster-ClusterId{value='67b46fb949f3734fc865ce20', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:108}] to localhost:27017
 2025-02-18 06:32:10 [cluster-ClusterId{value='67b46fb949f3734fc865ce20', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=60123600}
-2025-02-18 06:32:10 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountController' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\rest\AccountController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'proyecto1.msaccounts.client.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
+2025-02-18 06:32:10 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountController' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\rest\AccountController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'client.com.bank.pe.msaccounts.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
 2025-02-18 06:32:12 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2025-02-18 06:32:12 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountController' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\rest\AccountController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'proyecto1.msaccounts.client.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountController' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\rest\AccountController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'client.com.bank.pe.msaccounts.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:801)
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:224)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
@@ -781,8 +781,8 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1289)
-	at proyecto1.msaccounts.MsAccountsApplication.main(MsAccountsApplication.java:16)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'proyecto1.msaccounts.client.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
+	at com.bank.pe.msaccounts.MsAccountsApplication.main(MsAccountsApplication.java:16)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountService' defined in file [C:\Proyecto-1\ms-accounts\target\classes\proyecto1\msaccounts\service\AccountService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'client.com.bank.pe.msaccounts.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:801)
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:224)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
@@ -799,7 +799,7 @@ Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Err
 	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:788)
 	... 19 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'proyecto1.msaccounts.client.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'client.com.bank.pe.msaccounts.CustomerClient': Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: PathVariable annotation was empty on param 0.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:555)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
@@ -948,8 +948,8 @@ Original Stack Trace:
 		at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:91)
 		at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:100)
 		at com.sun.proxy.$Proxy125.getCustomerById(Unknown Source)
-		at proyecto1.msaccounts.service.impl.AccountServiceImpl.validateAndCreateAccount(AccountService.java:34)
-		at proyecto1.msaccounts.rest.AccountController.createAccount(AccountController.java:80)
+		at impl.service.com.bank.pe.msaccounts.AccountServiceImpl.validateAndCreateAccount(AccountService.java:34)
+		at rest.com.bank.pe.msaccounts.AccountController.createAccount(AccountController.java:80)
 		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1019,8 +1019,8 @@ Caused by: org.springframework.http.converter.HttpMessageConversionException: Ty
 	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:91)
 	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:100)
 	at com.sun.proxy.$Proxy125.getCustomerById(Unknown Source)
-	at proyecto1.msaccounts.service.impl.AccountServiceImpl.validateAndCreateAccount(AccountService.java:34)
-	at proyecto1.msaccounts.rest.AccountController.createAccount(AccountController.java:80)
+	at impl.service.com.bank.pe.msaccounts.AccountServiceImpl.validateAndCreateAccount(AccountService.java:34)
+	at rest.com.bank.pe.msaccounts.AccountController.createAccount(AccountController.java:80)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1120,8 +1120,8 @@ Original Stack Trace:
 		at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:91)
 		at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:100)
 		at com.sun.proxy.$Proxy125.getCustomerById(Unknown Source)
-		at proyecto1.msaccounts.service.impl.AccountServiceImpl.validateAndCreateAccount(AccountService.java:34)
-		at proyecto1.msaccounts.rest.AccountController.createAccount(AccountController.java:80)
+		at impl.service.com.bank.pe.msaccounts.AccountServiceImpl.validateAndCreateAccount(AccountService.java:34)
+		at rest.com.bank.pe.msaccounts.AccountController.createAccount(AccountController.java:80)
 		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1191,8 +1191,8 @@ Caused by: org.springframework.http.converter.HttpMessageConversionException: Ty
 	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:91)
 	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:100)
 	at com.sun.proxy.$Proxy125.getCustomerById(Unknown Source)
-	at proyecto1.msaccounts.service.impl.AccountServiceImpl.validateAndCreateAccount(AccountService.java:34)
-	at proyecto1.msaccounts.rest.AccountController.createAccount(AccountController.java:80)
+	at impl.service.com.bank.pe.msaccounts.AccountServiceImpl.validateAndCreateAccount(AccountService.java:34)
+	at rest.com.bank.pe.msaccounts.AccountController.createAccount(AccountController.java:80)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1293,8 +1293,8 @@ Original Stack Trace:
 		at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:91)
 		at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:100)
 		at com.sun.proxy.$Proxy125.getCustomerById(Unknown Source)
-		at proyecto1.msaccounts.service.AccountService.validateAndCreateAccount(AccountService.java:34)
-		at proyecto1.msaccounts.rest.AccountController.createAccount(AccountController.java:80)
+		at service.com.bank.pe.msaccounts.AccountService.validateAndCreateAccount(AccountService.java:34)
+		at rest.com.bank.pe.msaccounts.AccountController.createAccount(AccountController.java:80)
 		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1364,8 +1364,8 @@ Caused by: org.springframework.http.converter.HttpMessageConversionException: Ty
 	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:91)
 	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:100)
 	at com.sun.proxy.$Proxy125.getCustomerById(Unknown Source)
-	at proyecto1.msaccounts.service.AccountService.validateAndCreateAccount(AccountService.java:34)
-	at proyecto1.msaccounts.rest.AccountController.createAccount(AccountController.java:80)
+	at service.com.bank.pe.msaccounts.AccountService.validateAndCreateAccount(AccountService.java:34)
+	at rest.com.bank.pe.msaccounts.AccountController.createAccount(AccountController.java:80)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1464,8 +1464,8 @@ Original Stack Trace:
 		at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:91)
 		at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:100)
 		at com.sun.proxy.$Proxy125.getCustomerById(Unknown Source)
-		at proyecto1.msaccounts.service.impl.AccountServiceImpl.createAccount(AccountServiceImpl.java:52)
-		at proyecto1.msaccounts.rest.AccountController.createAccount(AccountController.java:66)
+		at impl.service.com.bank.pe.msaccounts.AccountServiceImpl.createAccount(AccountServiceImpl.java:52)
+		at rest.com.bank.pe.msaccounts.AccountController.createAccount(AccountController.java:66)
 		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1534,8 +1534,8 @@ Caused by: org.springframework.http.converter.HttpMessageConversionException: Ty
 	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:91)
 	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:100)
 	at com.sun.proxy.$Proxy125.getCustomerById(Unknown Source)
-	at proyecto1.msaccounts.service.impl.AccountServiceImpl.createAccount(AccountServiceImpl.java:52)
-	at proyecto1.msaccounts.rest.AccountController.createAccount(AccountController.java:66)
+	at impl.service.com.bank.pe.msaccounts.AccountServiceImpl.createAccount(AccountServiceImpl.java:52)
+	at rest.com.bank.pe.msaccounts.AccountController.createAccount(AccountController.java:66)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1619,8 +1619,8 @@ Original Stack Trace:
 		at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:91)
 		at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:100)
 		at com.sun.proxy.$Proxy125.getCustomerById(Unknown Source)
-		at proyecto1.msaccounts.service.impl.AccountServiceImpl.createAccount(AccountServiceImpl.java:52)
-		at proyecto1.msaccounts.rest.AccountController.createAccount(AccountController.java:66)
+		at impl.service.com.bank.pe.msaccounts.AccountServiceImpl.createAccount(AccountServiceImpl.java:52)
+		at rest.com.bank.pe.msaccounts.AccountController.createAccount(AccountController.java:66)
 		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1691,8 +1691,8 @@ Original Stack Trace:
 		at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:91)
 		at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:100)
 		at com.sun.proxy.$Proxy125.getCustomerById(Unknown Source)
-		at proyecto1.msaccounts.service.impl.AccountServiceImpl.createAccount(AccountServiceImpl.java:52)
-		at proyecto1.msaccounts.rest.AccountController.createAccount(AccountController.java:66)
+		at impl.service.com.bank.pe.msaccounts.AccountServiceImpl.createAccount(AccountServiceImpl.java:52)
+		at rest.com.bank.pe.msaccounts.AccountController.createAccount(AccountController.java:66)
 		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1761,8 +1761,8 @@ Caused by: org.springframework.http.converter.HttpMessageConversionException: Ty
 	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:91)
 	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:100)
 	at com.sun.proxy.$Proxy125.getCustomerById(Unknown Source)
-	at proyecto1.msaccounts.service.impl.AccountServiceImpl.createAccount(AccountServiceImpl.java:52)
-	at proyecto1.msaccounts.rest.AccountController.createAccount(AccountController.java:66)
+	at impl.service.com.bank.pe.msaccounts.AccountServiceImpl.createAccount(AccountServiceImpl.java:52)
+	at rest.com.bank.pe.msaccounts.AccountController.createAccount(AccountController.java:66)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1866,7 +1866,7 @@ org.springframework.web.reactive.function.client.WebClientRequestException: Fail
 	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
 Error has been observed at the following site(s):
 	*__checkpoint ⇢ Request to GET http://ms-customer/v1.0/customers/67ac8bc514334b06ea232968 [DefaultWebClient]
-	*__checkpoint ⇢ Handler proyecto1.msaccounts.rest.AccountController#createAccount(Account) [DispatcherHandler]
+	*__checkpoint ⇢ Handler rest.com.bank.pe.msaccounts.AccountController#createAccount(Account) [DispatcherHandler]
 	*__checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
 	*__checkpoint ⇢ HTTP POST "/v1.0/accounts" [ExceptionHandlingWebHandler]
 Original Stack Trace:
@@ -2036,16 +2036,16 @@ Caused by: io.netty.handler.timeout.ReadTimeoutException: null
 2025-02-18 13:59:20 [nioEventLoopGroup-3-5] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:154}] to localhost:27017
 2025-02-18 13:59:37 [nioEventLoopGroup-3-5] ERROR o.s.b.a.w.r.e.AbstractErrorWebExceptionHandler - [6b6ec751-3]  500 Server Error for HTTP POST "/v1.0/accounts"
 java.lang.NullPointerException: null
-	at proyecto1.msaccounts.service.impl.AccountServiceImpl.hasCreditCard(AccountServiceImpl.java:110)
+	at impl.service.com.bank.pe.msaccounts.AccountServiceImpl.hasCreditCard(AccountServiceImpl.java:110)
 	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
 Error has been observed at the following site(s):
-	*__checkpoint ⇢ Handler proyecto1.msaccounts.rest.AccountController#createAccount(Account) [DispatcherHandler]
+	*__checkpoint ⇢ Handler rest.com.bank.pe.msaccounts.AccountController#createAccount(Account) [DispatcherHandler]
 	*__checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
 	*__checkpoint ⇢ HTTP POST "/v1.0/accounts" [ExceptionHandlingWebHandler]
 Original Stack Trace:
-		at proyecto1.msaccounts.service.impl.AccountServiceImpl.hasCreditCard(AccountServiceImpl.java:110)
-		at proyecto1.msaccounts.service.impl.AccountServiceImpl.applyAccountRules(AccountServiceImpl.java:100)
-		at proyecto1.msaccounts.service.impl.AccountServiceImpl.lambda$createAccount$0(AccountServiceImpl.java:55)
+		at impl.service.com.bank.pe.msaccounts.AccountServiceImpl.hasCreditCard(AccountServiceImpl.java:110)
+		at impl.service.com.bank.pe.msaccounts.AccountServiceImpl.applyAccountRules(AccountServiceImpl.java:100)
+		at impl.service.com.bank.pe.msaccounts.AccountServiceImpl.lambda$createAccount$0(AccountServiceImpl.java:55)
 		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:125)
 		at reactor.core.publisher.Operators$MonoSubscriber.complete(Operators.java:1839)
 		at reactor.core.publisher.MonoCollectList$MonoCollectListSubscriber.onComplete(MonoCollectList.java:129)
@@ -2189,17 +2189,17 @@ Original Stack Trace:
 2025-02-18 18:59:42 [cluster-ClusterId{value='67b51eed3e9a7f5d974dde9f', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:174}] to localhost:27017
 2025-02-18 18:59:42 [cluster-ClusterId{value='67b51eed3e9a7f5d974dde9f', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=60580400}
 2025-02-18 18:59:42 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'webHandler' defined in class path resource [org/springframework/boot/autoconfigure/web/reactive/WebFluxAutoConfiguration$EnableWebFluxConfiguration.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/reactive/WebFluxAutoConfiguration$EnableWebFluxConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'accountController' method 
-proyecto1.msaccounts.rest.AccountController#getAccountById(String)
+rest.com.bank.pe.msaccounts.AccountController#getAccountById(String)
 to {GET /v1.0/accounts/{id}}: There is already 'accountController' bean method
-proyecto1.msaccounts.rest.AccountController#getAccountsByCustomer(String) mapped.
+rest.com.bank.pe.msaccounts.AccountController#getAccountsByCustomer(String) mapped.
 2025-02-18 18:59:44 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2025-02-18 18:59:44 [main] ERROR o.s.boot.SpringApplication - Application run failed
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'webHandler' defined in class path resource [org/springframework/boot/autoconfigure/web/reactive/WebFluxAutoConfiguration$EnableWebFluxConfiguration.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/reactive/WebFluxAutoConfiguration$EnableWebFluxConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'accountController' method 
-proyecto1.msaccounts.rest.AccountController#getAccountById(String)
+rest.com.bank.pe.msaccounts.AccountController#getAccountById(String)
 to {GET /v1.0/accounts/{id}}: There is already 'accountController' bean method
-proyecto1.msaccounts.rest.AccountController#getAccountsByCustomer(String) mapped.
+rest.com.bank.pe.msaccounts.AccountController#getAccountsByCustomer(String) mapped.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:628)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
@@ -2215,11 +2215,11 @@ proyecto1.msaccounts.rest.AccountController#getAccountsByCustomer(String) mapped
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1289)
-	at proyecto1.msaccounts.MsAccountsApplication.main(MsAccountsApplication.java:15)
+	at com.bank.pe.msaccounts.MsAccountsApplication.main(MsAccountsApplication.java:15)
 Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/reactive/WebFluxAutoConfiguration$EnableWebFluxConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'accountController' method 
-proyecto1.msaccounts.rest.AccountController#getAccountById(String)
+rest.com.bank.pe.msaccounts.AccountController#getAccountById(String)
 to {GET /v1.0/accounts/{id}}: There is already 'accountController' bean method
-proyecto1.msaccounts.rest.AccountController#getAccountsByCustomer(String) mapped.
+rest.com.bank.pe.msaccounts.AccountController#getAccountsByCustomer(String) mapped.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
@@ -2239,9 +2239,9 @@ proyecto1.msaccounts.rest.AccountController#getAccountsByCustomer(String) mapped
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
 	... 15 common frames omitted
 Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'accountController' method 
-proyecto1.msaccounts.rest.AccountController#getAccountById(String)
+rest.com.bank.pe.msaccounts.AccountController#getAccountById(String)
 to {GET /v1.0/accounts/{id}}: There is already 'accountController' bean method
-proyecto1.msaccounts.rest.AccountController#getAccountsByCustomer(String) mapped.
+rest.com.bank.pe.msaccounts.AccountController#getAccountsByCustomer(String) mapped.
 	at org.springframework.web.reactive.result.method.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:555)
 	at org.springframework.web.reactive.result.method.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:527)
 	at org.springframework.web.reactive.result.method.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:251)
@@ -2455,14 +2455,14 @@ Original Stack Trace:
 2025-02-18 19:45:18 [nioEventLoopGroup-3-3] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:188}] to localhost:27017
 2025-02-18 19:45:18 [nioEventLoopGroup-3-3] ERROR o.s.b.a.w.r.e.AbstractErrorWebExceptionHandler - [0889020f-1]  500 Server Error for HTTP GET "/v1.0/accounts/report/commissions?startDate=2024-02-01&endDate=2024-02-28"
 java.lang.NullPointerException: null
-	at proyecto1.msaccounts.service.impl.AccountServiceImpl.lambda$getCommissionReport$15(AccountServiceImpl.java:187)
+	at impl.service.com.bank.pe.msaccounts.AccountServiceImpl.lambda$getCommissionReport$15(AccountServiceImpl.java:187)
 	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
 Error has been observed at the following site(s):
-	*__checkpoint ⇢ Handler proyecto1.msaccounts.rest.AccountController#getCommissionReport(String, String) [DispatcherHandler]
+	*__checkpoint ⇢ Handler rest.com.bank.pe.msaccounts.AccountController#getCommissionReport(String, String) [DispatcherHandler]
 	*__checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
 	*__checkpoint ⇢ HTTP GET "/v1.0/accounts/report/commissions?startDate=2024-02-01&endDate=2024-02-28" [ExceptionHandlingWebHandler]
 Original Stack Trace:
-		at proyecto1.msaccounts.service.impl.AccountServiceImpl.lambda$getCommissionReport$15(AccountServiceImpl.java:187)
+		at impl.service.com.bank.pe.msaccounts.AccountServiceImpl.lambda$getCommissionReport$15(AccountServiceImpl.java:187)
 		at reactor.core.publisher.FluxFilter$FilterConditionalSubscriber.onNext(FluxFilter.java:233)
 		at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.onNext(FluxUsingWhen.java:345)
 		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79)
