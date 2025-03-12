@@ -40,7 +40,6 @@
 	</dependencyManagement>
 
 	<dependencies>
-		<!-- Spring Boot WebFlux -->
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-webflux-ui</artifactId>
@@ -58,8 +57,6 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
-
-		<!-- Spring Boot MongoDB (Versión compatible con Java 11) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-mongodb-reactive</artifactId>
@@ -144,8 +141,6 @@
 					<target>${java.version}</target>
 				</configuration>
 			</plugin>
-
-			<!-- Spring Boot Plugin -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
