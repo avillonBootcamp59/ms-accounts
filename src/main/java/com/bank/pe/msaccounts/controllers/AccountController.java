@@ -1,5 +1,6 @@
 package com.bank.pe.msaccounts.controllers;
 
+import com.bank.pe.msaccounts.dto.AccountDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -16,6 +17,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import com.bank.pe.msaccounts.entity.Account;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
 
@@ -59,8 +61,8 @@ public class AccountController {
             @ApiResponse(responseCode = "500", description = "Error interno del servidor")
     })
     @PostMapping
-    public Mono<ResponseEntity<Map<String, String>>> createAccount(@RequestBody Account account) {
-        return accountService.createAccount(account)
+    public Mono<ResponseEntity<Map<String, String>>> createAccount(@RequestBody AccountDTO account) {
+        return accountService.createAccount(convertDtoToEntity(account))
                 .map(savedAccount -> ResponseEntity.status(HttpStatus.CREATED)
                         .body(Map.of("message", "Cuenta creada exitosamente", "id", savedAccount.getId())))
                 .onErrorResume(ResponseStatusException.class, ex -> {
@@ -79,10 +81,10 @@ public class AccountController {
             @ApiResponse(responseCode = "404", description = "Cuenta no encontrada")
     })
     @PutMapping("/{id}")
-    public Mono<ResponseEntity<Account>> updateAccount(@PathVariable String id, @RequestBody Account updatedAccount) {
-        logger.info("Actualizando saldo de la cuenta con ID: {}", id);
+    public Mono<ResponseEntity<Account>> updateAccount(@PathVariable String id, @RequestBody AccountDTO updatedAccount) {
 
-        return accountService.updateAccount(id, updatedAccount)
+
+        return accountService.updateAccount(id, convertDtoToEntity(updatedAccount))
                 .map(ResponseEntity::ok)
                 .defaultIfEmpty(ResponseEntity.notFound().build());
     }
@@ -94,7 +96,6 @@ public class AccountController {
     })
     @DeleteMapping("/{id}")
     public Mono<ResponseEntity<Void>> deleteAccount(@PathVariable String id) {
-        logger.info("Eliminando cuenta con ID: {}", id);
 
         return accountService.deleteAccount(id)
                 .then(Mono.just(ResponseEntity.ok().<Void>build()))
@@ -111,8 +112,6 @@ public class AccountController {
     public Mono<ResponseEntity<String>> transferFunds(@RequestParam String fromAccountId,
                                                       @RequestParam String toAccountId,
                                                       @RequestParam Double amount) {
-        logger.info("Realizando transferencia de {} desde la cuenta {} a la cuenta {}",
-                amount, fromAccountId, toAccountId);
 
         return accountService.transferBetweenAccounts(fromAccountId, toAccountId, amount)
                 .then(Mono.just(ResponseEntity.ok("Transferencia realizada con éxito")))
@@ -129,7 +128,6 @@ public class AccountController {
     })
     @GetMapping("/report/daily-balance/{customerId}")
     public Mono<ResponseEntity<Map<String, Double>>> getDailyBalanceReport(@PathVariable String customerId) {
-        logger.info("Generando reporte de saldo promedio diario para el cliente: {}", customerId);
 
         return accountService.getDailyBalanceReport(customerId)
                 .map(ResponseEntity::ok)
@@ -148,7 +146,6 @@ public class AccountController {
 
         DateTimeFormatter formatter = DateTimeFormatter.ISO_LOCAL_DATE;
 
-        // Convertir los parámetros de String a LocalDate
         LocalDate start = LocalDate.parse(startDate, formatter);
         LocalDate end = LocalDate.parse(endDate, formatter);
 
@@ -175,5 +172,23 @@ public class AccountController {
                 .switchIfEmpty(Flux.empty());
     }
 
+    private Account convertDtoToEntity(AccountDTO accountDTO) {
+        return new Account(
+                null,
+                accountDTO.getNumber(),
+                accountDTO.getType(),
+                accountDTO.getCustomerId(),
+                accountDTO.getBalance(),
+                accountDTO.isHasMaintenanceFee(),
+                accountDTO.getTransactionLimit(),
+                accountDTO.getAuthorizedSigners(),
+                accountDTO.getCommissionFee(),
+                accountDTO.getMinimumOpeningBalance(),
+                LocalDateTime.now(),
+                accountDTO.getFreeTransactions(),
+                accountDTO.getTransactionCount(),
+                LocalDateTime.now()
+        );
+    }
 }
 

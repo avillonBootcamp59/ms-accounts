@@ -1,5 +1,6 @@
 package com.bank.pe.msaccounts.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.bson.codecs.pojo.annotations.BsonId;
 import org.springframework.data.annotation.Id;
@@ -10,6 +11,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
+@AllArgsConstructor
 @Document(collection = "accounts")
 public class Account {
     @BsonId
@@ -27,6 +29,7 @@ public class Account {
     private Integer freeTransactions; // Número de transacciones sin comisión
     private Integer transactionCount; // Contador de transacciones
     private LocalDateTime createdAt; // Fecha de creación de la cuenta
+
     public Account() {
         this.lastTransactionDate = LocalDateTime.now();
         this.createdAt = LocalDateTime.now();
