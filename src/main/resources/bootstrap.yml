@@ -4,7 +4,10 @@ spring:
 
   cloud:
     config:
+      enabled: false
       uri: http://localhost:8888
+      username: avillon
+      password: 4v1ll0nJd
       fail-fast: true
       retry:
         max-attempts: 5
@@ -16,11 +19,6 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
   endpoint:
     health:
       show-details: always

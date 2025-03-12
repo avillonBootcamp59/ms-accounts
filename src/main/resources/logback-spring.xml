@@ -26,5 +26,5 @@
     </root>
 
     <!-- Logs detallados para accountsController -->
-    <logger name="proyecto1.msaccounts.rest.AccountController" level="DEBUG"/>
+    <logger name="com.bank.pe.msaccounts.controllers.AccountController" level="DEBUG"/>
 </configuration>
